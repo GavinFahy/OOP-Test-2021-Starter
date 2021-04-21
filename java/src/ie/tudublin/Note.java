@@ -10,13 +10,13 @@ public class Note {
     public void setNote(char note) {
         this.note = note;
     }
-    public int getDuration() {
+    public static int getDuration() {
         return duration;
     }
     public void setDuration(int duration) {
         this.duration = duration;
     }
-    
+
     public Note(char note, int duration) {
         this.note = note;
         this.duration = duration;
@@ -24,6 +24,6 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note [duration=" + duration + ", note=" + note + "]";
+        return "" + note + " " + duration + "";
     }
 }

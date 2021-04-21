@@ -1,8 +1,6 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import processing.core.PApplet;
 
@@ -28,11 +26,8 @@ public class ScoreDisplay extends PApplet
 			}
 			else
 			{
-				
 				int dur = NN - '0';
-
 				Note list = new Note(score.charAt(i), dur);
-				
 				notes.add(list);
 			}
 		}
@@ -78,10 +73,59 @@ public class ScoreDisplay extends PApplet
 	{
 		background(255);
 		straveLines();
+		drawNotes();
 		
 	}
 
 	void drawNotes()
 	{
+		int i = 0;
+		for(Note n: notes)
+		{
+			char musicNote = n.getNote();
+			if(musicNote == 'D')
+			{
+				fill(0);
+				circle(80+i+30, 380,15);
+				line(115, 305, 115, 380);
+			}
+
+			if(musicNote == 'E')
+			{
+				fill(0);
+				circle(150+i+30, 370,15);
+				line(200, 180, 180, 380);
+			}
+
+			if(musicNote == 'F')
+			{
+
+			}
+
+			if(musicNote == 'G')
+			{
+
+			}
+
+			if(musicNote == 'A')
+			{
+
+			}
+
+			if(musicNote == 'B')
+			{
+
+			}
+
+			if(musicNote == 'c')
+			{
+
+			}
+
+			if(musicNote == 'd')
+			{
+
+			}
+		}
 	}
 }
