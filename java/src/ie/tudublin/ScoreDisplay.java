@@ -8,7 +8,7 @@ import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
 {
-	List<String> notes = new ArrayList<String>();
+	ArrayList<Note> notes = new ArrayList<Note>();
 
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
@@ -16,13 +16,31 @@ public class ScoreDisplay extends PApplet
 
 	public void loadScore()
 	{
-		String str[] = score.split(",");
-		notes = Arrays.asList(str);
+		int i;
+		for(i=0; i < score.length(); i++)
+		{
+			char NN = score.charAt(i);
+
+			if(Character.isDigit(NN))
+			{
+				Note list = new Note(score.charAt(i), 1);
+				notes.add(list);
+			}
+			else
+			{
+				
+				int dur = NN - '0';
+
+				Note list = new Note(score.charAt(i), dur);
+				
+				notes.add(list);
+			}
+		}
 	}	
 
 	public void printScores()
 	{
-		for(String n:notes)
+		for(Note n:notes)
 		{
 			println(n);
 		}
@@ -52,6 +70,7 @@ public class ScoreDisplay extends PApplet
 
 	public void setup() 
 	{
+		loadScore();
 		printScores();
 	}
 
