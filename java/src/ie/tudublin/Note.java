@@ -16,6 +16,7 @@ public class Note {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+    
     public Note(char note, int duration) {
         this.note = note;
         this.duration = duration;
