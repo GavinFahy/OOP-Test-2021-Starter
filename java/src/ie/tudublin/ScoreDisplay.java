@@ -1,15 +1,14 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
 {
-	ArrayList<Note> notes = new ArrayList<Note>();
-
-	private float leftBorder;
-    private float border;
+	List<String> notes = new ArrayList<String>();
 
 	String score = "DEFGABcd";
 	//String score = "D2E2F2G2A2B2c2d2";
@@ -17,12 +16,13 @@ public class ScoreDisplay extends PApplet
 
 	public void loadScore()
 	{
-		
+		String str[] = score.split(",");
+		notes = Arrays.asList(str);
 	}	
 
 	public void printScores()
 	{
-		for(Note n:notes)
+		for(String n:notes)
 		{
 			println(n);
 		}
@@ -42,11 +42,11 @@ public class ScoreDisplay extends PApplet
 	{
 		float border = 0.1f * width;
 
-		for(int i = 1; i<= 5; i++)
+		for(int i = 0; i < 5; i++)
 		{
-			float y = map(i, 1, 9, border * 2, height + 50 - border);
-			stroke(0, 0, 0);
-			line(border, y, width - border, y);
+			float y = map(i, -5, 5, border, height - border);
+			stroke(0);
+			line(border, y, width, y);
 		}
 	}
 
