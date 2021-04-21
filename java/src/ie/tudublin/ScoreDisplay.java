@@ -39,6 +39,17 @@ public class ScoreDisplay extends PApplet
 		{
 			println(n);
 		}
+		/*couldnet get this to work 
+		i think it is correct not sure why it wont run
+		if(n.getDuration() == 1)
+		{
+			println("Quaver");
+		}
+		else
+		{
+			println("Crotchet");
+		}
+		*/
 	}
 
 	public void settings()
@@ -94,12 +105,14 @@ public class ScoreDisplay extends PApplet
 			{
 				fill(0);
 				circle(150+i+30, 370,15);
-				line(200, 180, 180, 380);
+				line(185, 330, 185, 370);
 			}
 
 			if(musicNote == 'F')
 			{
-
+				fill(0);
+				circle(200+i+30, 350,15);
+				line(255, 270, 235, 360);
 			}
 
 			if(musicNote == 'G')
