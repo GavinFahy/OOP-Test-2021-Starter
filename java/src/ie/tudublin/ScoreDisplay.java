@@ -40,14 +40,12 @@ public class ScoreDisplay extends PApplet
 
 	public void straveLines()
 	{
-		leftBorder = width * 0.2f;;
-        border = width * 0.05f;
-		textAlign(CENTER, RIGHT);
-		stroke(0);
-		fill(0);
+		float border = 0.1f * width;
+
 		for(int i = 1; i<= 5; i++)
 		{
-			float y = map(i, 1, 5, leftBorder, width - border);
+			float y = map(i, 1, 9, border * 2, height + 50 - border);
+			stroke(0, 0, 0);
 			line(border, y, width - border, y);
 		}
 	}
