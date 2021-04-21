@@ -2,7 +2,6 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-
 import processing.core.PApplet;
 
 public class ScoreDisplay extends PApplet
@@ -20,6 +19,14 @@ public class ScoreDisplay extends PApplet
 	{
 		
 	}	
+
+	public void printScores()
+	{
+		for(Note n:notes)
+		{
+			println(n);
+		}
+	}
 
 	public void settings()
 	{
@@ -47,7 +54,7 @@ public class ScoreDisplay extends PApplet
 
 	public void setup() 
 	{
-
+		printScores();
 	}
 
 	public void draw()
